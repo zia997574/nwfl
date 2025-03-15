@@ -1,0 +1,355 @@
+/* Cart container */
+.cart {
+    position: fixed;
+    top: 0;
+    right: -380px; /* Initially hide the cart off-screen */
+    width: 380px;
+    max-height: 100vh; /* Set a maximum height for the cart */
+    padding: 20px;
+    background-color: #ffffff;
+    transition: right 0s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 1000; /* Ensure the cart is above other elements */
+    overflow-y: auto; /* Add vertical scroll */
+  }
+  
+  /* Cart active state */
+  .cart.active {
+    right: 0; /* Move the cart into view when active */
+  }
+  
+  /* Media query for phones */
+  @media screen and (max-width: 600px) {
+    .cart {
+        right: -100%; /* Initially hide the cart off-screen */
+        width: 100%;
+        max-height: 100vh; /* Set a maximum height for the cart */
+        overflow-y: auto; /* Add vertical scroll */
+  
+    }
+  
+    .cart.active {
+        left: 0; /* Move the cart into view when active */
+    }
+  }
+  
+  
+  
+  /* Cart title */
+  .cart-title {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: black;
+  }
+  
+  /* Cart total */
+  .total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top: 9px solid rgb(7, 4, 0);
+  }
+  
+  /* Cart total title */
+  .total-title {
+    font-size: 1.8rem;
+    font-weight: 758;
+    margin-top: 1rem;
+    margin-right: .6rem;
+  
+  }
+  
+  /* Cart total price */
+  .total-price {
+    font-size: 1.7rem;
+    margin: 1rem 0 0 0.7rem;
+    color: black;
+    font-weight: 550;
+  
+  }
+  /* Delivery options container */
+  .delivery-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: .9rem;
+  }
+  
+  /* Individual delivery option */
+  .delivery-option {
+    font-size: 1rem;
+    margin-top: 0rem;
+    padding: 0.5rem 0;
+  }
+  
+  /* Divider line between delivery options */
+  .delivery-divider {
+    width: 100%;
+    border-top: 1.9px solid #000000;
+    margin: 0rem 0;
+  }
+  
+  
+  
+  /* Style for Express Delivery */
+  .delivery-option.express {
+    color: rgb(0, 0, 0);
+    font-weight: 549;
+  }
+  
+  /* Buy button */
+  .btn-buy {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    width: 96%;
+    text-align: center;
+    border: none;
+    border-radius: 2rem;
+    background-color: rgb(21, 26, 26);
+    color: #ffffff;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  /* Close cart button */
+  #close-cart {
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    color: rgb(20, 26, 26);
+    cursor: pointer;
+  }
+  
+  /* Cart box */
+  .cart-box {
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* Cart image */
+  .cart-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px;
+    object-position: center;
+  }
+  
+  /* Detail box */
+  .detail-box {
+    display: grid;
+    row-gap: 0.5rem;
+    outline: black;
+  }
+  
+  /* Product title */
+  .product-title {
+    font-size: .700rem;
+    font-weight: 500;
+    text-transform: lowercase;
+  }
+  
+  /* Product price */
+  .product-price {
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  
+  /* Trash icon */
+  .trash-icon {
+    font-size: 24px;
+    color: rgb(21, 29, 29);
+    cursor: pointer;
+    margin-left: 100%;
+  }
+  
+  /* Cart dropdown */
+  .cart-dropdown {
+    display: none;
+    /* Additional styling */
+  }
+  
+  .cart-dropdown.show {
+    display: block;
+  }
+  
+  /* Media query for phones */
+  @media screen and (max-width: 600px) {
+    .cart {
+        right: -100%; /* Initially hide the cart off-screen */
+        width: 100%;
+        overflow-y: auto; /* Add vertical scroll */
+    }
+   /* Default styles */
+   .cart-icon {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px; /* Adjust as needed */
+    margin-bottom: 50px;
+    color: #ccc;
+  }
+    .cart.active {
+        right: 0; /* Move the cart into view when active */
+    }
+  }
+  /* Default styles */
+  .cart-icon {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px; /* Adjust as needed */
+  }
+  
+  .cart-icon i {
+    font-size: 24px; /* Adjust as needed */
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -8px; /* Adjust as needed */
+    right: -8px; /* Adjust as needed */
+    background-color: red;
+    color: white;
+    font-size: 12px; /* Adjust as needed */
+    padding: 2px 5px;
+    border-radius: 50%;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .cart-icon i {
+      font-size: 25px; /* Adjust as needed for smaller screens */
+      color: light;
+    }
+  
+    .cart-count {
+      top: -6px; /* Adjust as needed for smaller screens */
+      right: -6px; /* Adjust as needed for smaller screens */
+      font-size: 10px; /* Adjust as needed for smaller screens */
+      padding: 1px 3px;
+      background-color: blue;
+    }
+  }
+ 
+  .add-to-cart-button {
+    display: flex;
+    padding: 12px 16px; /* Slightly smaller padding for phones */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: none;
+    color: rgba(0, 0, 0, 0.557);
+    background-color: rgb(255, 216, 20);
+    border: 1.5px solid  rgb(255, 216, 20);
+    border-radius: 31px;
+    cursor: pointer;
+    width: 100%; /* Make the button full width on mobile */
+    max-width: 400px; /* Limit the max width to avoid it becoming too large */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    justify-content: center; /* Center horizontally */
+
+}
+
+.add-to-cart-button:hover {
+    background-color: rgb(245, 205, 3);
+    border-color: rgb(245, 205, 3);
+}
+
+@media (max-width: 600px) {
+    .add-to-cart-button {
+        padding: 10px 14px; /* Smaller padding for smaller screens */
+        font-size: 14px; /* Smaller font size for better readability */
+        width: 90%; /* Make it take most of the width of the screen */
+        margin: 10px auto; /* Center the button with auto margin */
+    }
+}
+@media (max-width: 768px) {
+    .add-to-cart-button {
+        padding: 10px 14px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size */
+        width: 90%; /* Adjust width */
+        margin: 10px auto; /* Center the button */
+    }
+}
+
+@media (max-width: 480px) {
+    .add-to-cart-button {
+        padding: 8px 12px; /* Further adjust padding for very small screens */
+        font-size: 12px; /* Further adjust font size */
+    }
+}
+/* General Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    position: relative;
+}
+
+a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333; /* Default text color */
+}
+
+a:hover {
+    background-color: #f0f0f0; /* Hover effect */
+}
+
+/* Dropdown Styles */
+.dropdown {
+    display: none; /* Hide by default */
+    position: absolute;
+    left: 0;
+    top: 100%; /* Position it below the parent */
+    background: white; /* Background color */
+    border: 1px solid #ccc; /* Optional border */
+    z-index: 1000; /* Ensure it appears above other elements */
+    width: 200px; /* Fixed width for dropdown */
+}
+
+li:hover .dropdown {
+    display: block; /* Show on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    a {
+        padding: 15px; /* Increased padding for touch targets */
+        font-size: 16px; /* Larger font size */
+    }
+    
+    .dropdown {
+        width: 100%; /* Full width on mobile */
+        left: 0; /* Align with the parent */
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 601px) {
+    ul {
+        display: flex; /* Flex layout for desktop */
+    }
+
+    li {
+        margin-right: 20px; /* Spacing between items */
+    }
+
+    .dropdown {
+        width: 200px; /* Fixed width on desktop */
+    }
+}
+
+

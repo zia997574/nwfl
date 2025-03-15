@@ -1,0 +1,998 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Navigation styles */
+nav {
+background: black;
+height: 100px;
+width: 100%;
+display: flex;
+justify-content: center; /* Center items horizontally */
+align-items: center; /* Align items vertically */
+}
+
+label.logo {
+color: white;
+font-size: 24px; /* Adjusted font size for logo */
+line-height: 80px;
+padding: 0 20px; /* Adjusted padding */
+font-weight: bold;
+}
+header {
+position: sticky; /* Makes the header sticky */
+top: 0; /* Sticks the header to the top */
+background: #131921; /* Background color */
+z-index: 1000; /* Ensure it stays above other content */
+margin-top: -20px;
+}
+/* Centering the website name at the top */
+.website-name {
+text-align: center;
+font-size: 2rem; /* Adjust size if needed */
+font-weight: bold;
+margin-top: 10px; /* Space at the top */
+background-color: black; /* Maybelline red color */
+color: white; /* Text color */
+padding: 10px; /* Padding around the text */
+letter-spacing: 1px; /* Space between letters for a cleaner look */
+}
+/* Footer container */
+
+.footer-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: flex-start;
+padding: 20px 50PX;
+background-color: #01080e;
+color: #333;
+margin-bottom: -12%;
+}
+
+/* Footer section */
+.footer-section {
+flex: 1 1 calc(33.333% - 20px);
+margin-bottom: 20px;
+}
+
+/* Footer section headings */
+.footer-section h3 {
+font-size: 18px;
+margin-bottom: 0;
+color: #ffffff;
+}
+
+/* Footer links */
+.footer-section ol {
+list-style: none;
+padding: 0;
+}
+
+.footer-section ol li {
+margin-bottom: 10px;
+}
+
+.footer-section ol li a {
+color: #d2cbcb;
+text-decoration: none;
+font-size: 14px;
+transition: color 0.3s ease;
+}
+
+.footer-section ol li a:hover {
+color: #01060b;
+}
+
+/* Payment icons */
+.payment-icons {
+display: flex;
+justify-content: center;
+gap: 20px;
+margin-top: 20px;
+}
+
+.payment-icons li i {
+color: #333;
+font-size: 24px;
+
+}
+
+/* Footer bottom section */
+.footer-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.footer-bottom-left {
+flex: 1;
+margin-top: 7%;
+}
+
+.footer-bottom-right {
+flex: 1;
+text-align: right;
+}
+
+/* Social links */
+.social-links {
+display: flex;
+justify-content: flex-end;
+gap: 20px;
+}
+
+.social-links li a {
+color: #333;
+font-size: 24px;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+color: #020f1e;
+}
+
+/* Powered by Shopify */
+.powered-by-shopify {
+font-size: 14px;
+color: #faf8f8;
+margin-bottom: -20%;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+/* Footer container */
+.footer-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: flex-start;
+padding: 20px 10px; /* Adjusted padding for mobile */
+background-color: #01080e;
+color: #a49e9e;
+margin-right: 0%;
+margin-left: -1.5%;
+margin-bottom: -21%;
+}
+nav {
+  background: black;
+  height: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Align items vertically */
+  }
+/* Footer section */
+.footer-section {
+flex: 1 1 calc(100% - 20px); /* Adjusted width for mobile */
+margin-bottom: 20px;
+}
+
+/* Footer section headings */
+.footer-section h3 {
+font-size: 16px; /* Reduced font size for mobile */
+margin-bottom: 0;
+color: #ffffff;
+}
+
+/* Footer links */
+.footer-section ol {
+list-style: none;
+padding: 0;
+}
+
+.footer-section ol li {
+margin-bottom: 10px;
+}
+
+.footer-section ol li a {
+color: #d2cbcb;
+text-decoration: none;
+font-size: 12px; /* Reduced font size for mobile */
+transition: color 0.3s ease;
+}
+
+.footer-section ol li a:hover {
+color: #01060b;
+}
+
+/* Payment icons */
+.payment-icons {
+display: flex;
+justify-content: center;
+gap: 20px;
+margin-top: 20px;
+}
+
+.payment-icons li i {
+color: #333;
+font-size: 20px; /* Reduced font size for mobile */
+}
+
+/* Footer bottom section */
+.footer-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.footer-bottom-left {
+flex: 1;
+margin-top: 7%;
+}
+
+.footer-bottom-right {
+flex: 1;
+text-align: right;
+}
+.checkbtn {
+  font-size: 24px; /* Adjusted font size for toggle button */
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 283px; /* Adjusted margin */
+  cursor: pointer;
+  display: none;
+  margin-bottom: 50px;
+  }
+  #check {
+    display: none;
+    }
+     
+ 
+/* Social links */
+.social-links {
+display: flex;
+justify-content: flex-end;
+gap: 20px;
+}
+
+.social-links li a {
+color: #333;
+font-size: 20px; /* Reduced font size for mobile */
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+color: #020f1e;
+}
+
+/* Powered by Shopify */
+.powered-by-shopify {
+font-size: 12px; /* Reduced font size for mobile */
+color: #faf8f8;
+margin-bottom: -20%;
+}
+}
+
+.website-name a {
+text-decoration: none;
+color: white; /* Keep the text white like maybelline.com */
+font-family: Arial, sans-serif; /* Adjust font to match the style */
+}
+
+nav ul {
+list-style: none;
+display: flex;
+gap: 20px; /* Space between the items */
+}
+
+/* Styling for the navigation items */
+nav ul li {
+display: inline-block;
+line-height: 65px; /* Align items vertically */
+margin: 0 15px; /* Increase space between items */
+}
+
+nav ul li a {
+color: white; /* Black text color */
+font-size: 16px; /* Adjust font size */
+padding: 7px 55px; /* Add padding around text */
+border-radius: 3px; /* Slightly rounded corners */
+text-transform: uppercase; /* Make text uppercase */
+text-decoration: none; /* Remove underline from links */
+font-weight: bold; /* Make the font bold */
+font-family: Arial, sans-serif; /* Set the font family */
+}
+
+nav ul li a:hover {
+background-color: black; /* Maybelline red on hover */
+color: rgb(0, 0, 0); /* White text when hovered */
+transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+a.active,
+a:hover {
+background: #E60012;
+transition: .1s;
+}
+
+/* Dropdown menu styles */
+nav ul li ul.dropdown {
+position: absolute;
+top: 69%; /* Position below the parent item */
+left: 0;
+background-color: black; /* Background for the dropdown */
+border-radius: 4px; /* Rounded corners */
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Shadow for depth */
+display: none; /* Initially hidden */
+padding: 0; /* Remove padding from the dropdown */
+margin: 0;
+z-index: 1000; /* Ensure it appears above other content */;
+}
+
+nav ul li:hover ul.dropdown {
+display: block; /* Show dropdown on hover */
+}
+
+nav ul li ul.dropdown li {
+padding: 0; /* Remove padding from list items */
+
+}
+
+/* Dropdown item styles */
+nav ul li ul.dropdown li a {
+display: flex; /* Use flex display for dropdown items */
+align-items: center; /* Center items vertically */
+padding: 6px 15px; /* Padding for dropdown items */
+color: white; /* Black text */
+font-size: 14px; /* Font size */
+text-decoration: none; /* Remove underline */
+transition: background-color 0.2s ease; /* Smooth background transition */
+
+}
+
+/* Image styling */
+.dropdown-image {
+width: 50px; /* Set a fixed width */
+height: auto; /* Maintain aspect ratio */
+margin-right: 2px; /* Reduced space between image and text */
+}
+
+/* Hover effects */
+nav ul li ul.dropdown li a:hover {
+background-color: black; /* Red background on hover */
+color: white; /* White text on hover */
+}
+
+/* Optional: Adjust text style */
+nav ul li ul.dropdown li a {
+font-family: Arial, sans-serif; /* Font family */
+font-weight: 500; /* Slightly bolder text */
+line-height: 1; /* Adjust line height to reduce space */
+}
+
+
+
+
+.checkbtn {
+font-size: 24px; /* Adjusted font size for toggle button */
+color: white;
+float: right;
+line-height: 80px;
+margin-right: 283px; /* Adjusted margin */
+cursor: pointer;
+display: none;
+}
+
+#check {
+display: none;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 952px) {
+label.logo {
+    font-size: 20px; /* Further reduce font size for smaller screens */
+    padding-left: 20px; /* Adjusted padding */
+}
+
+nav ul li a {
+    font-size: 14px; /* Further reduce font size for smaller screens */
+
+}
+}
+
+@media (max-width: 858px) {
+.checkbtn {
+    display: block;
+}
+
+ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    top: 65px;
+    left: -100%;
+    text-align: center;
+    z-index: 1000; /* Ensuring the navigation is above other content */
+}
+
+nav ul {
+    display: block;
+    margin: 0;
+    padding: 20px 0;
+}
+
+nav ul li {
+    display: block;
+    margin-bottom: 15px;
+    
+}
+
+nav ul li a {
+    font-size: 18px; /* Adjusted font size for smaller screens */
+    text-decoration: none; /* Remove text decoration */
+    color: white; /* Ensuring link color */
+    
+}
+
+a:hover, a.active {
+    background: none;
+    color: black;
+    
+}
+
+#check:checked ~ ul {
+    left: 0;
+}
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+
+  /* Slideshow container */
+  .slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+  }
+  
+
+  /* Hide all images by default */
+  .mySlides {
+    display: none;
+  }
+ 
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+
+
+
+/* Section Titles */
+.section-title {
+font-size: 26px; /* Increased font size for more prominence */
+font-weight: bold;
+margin-bottom: 25px;
+color: #333; /* Darker color for better readability */
+text-transform: uppercase; /* Capitalize for a bold effect */
+letter-spacing: 2px; /* Adds spacing between letters for a modern look */
+text-align: center; /* Aligns the titles centrally */
+}
+
+/* General Styles */
+body {
+font-family: Arial, sans-serif;
+background-color: #ffffff;
+margin: 0;
+padding: 0;
+}
+
+/* Container */
+.containeer {
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+}
+
+/* Section Title */
+.section-title {
+font-size: 2.5rem;         /* Larger font size for more prominence */
+font-weight: 700;          /* Use a bolder weight for emphasis */
+margin-bottom: 15px;       /* Slightly less space below the title */
+text-align: center;        /* Center-align the title */
+color: gray;               /* Darker gray for a softer look than pure black */
+text-transform: none;      /* Keep the original case for a more modern feel */
+letter-spacing: 1px;       /* Less spacing for a cleaner appearance */
+margin-top: 0px;          /* Adjust space at the top for balance */
+font-family: 'Arial', sans-serif; /* Use a clean, sans-serif font */
+padding: 10px; /* Reduce padding to make the box smaller */
+border: 0px solid #ffffff;
+border-radius: 0px;
+background-color: black;
+}
+
+
+/* Section Description */
+.section-description {
+font-size: 1rem;
+color: #666;
+margin-bottom: 30px;
+}
+
+/* Grid Layout */
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 20px;
+margin-bottom: 6%;
+}
+@media (max-width: 768px) {
+.grid {
+  grid-template-columns: repeat(2, 2fr); /* Single column on smaller screens */
+}
+.slideshow-container img {
+  width: 100px;
+  height: 650px; /* Ensures images stretch to fill the container height */
+  object-fit: cover; /* Crop the image if it doesn't match the container ratio */
+
+}
+
+
+}
+
+/* Card Styling */
+.card {
+background-color: #FFFFFF;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding: 0px;
+text-align: center;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+width: 100%;
+height: auto;
+margin-bottom: 15px;
+}
+.caard-img {
+width: 73%;
+height: auto;
+margin-bottom: 15px;
+}
+
+
+.card-title {
+font-size: 1.125rem;
+font-weight: bold;
+color: #333;
+margin-bottom: 10px;
+}
+.card-liink-wrapper {
+display: block; /* Makes the entire card clickable */
+text-decoration: none; /* Ensures the full card link does not have underline */
+color: inherit; /* Inherit the text color of the content inside */
+}
+.card-link {
+font-size: 2.5rem;
+color: black;
+text-decoration: none;
+transition: color 0.3s ease;
+margin-top: -50PX;
+}
+/* Card Link */
+/* Ensure the link wrapper spans the full width of the card */
+.card-link-wrapper {
+display: block; /* Makes the entire card clickable */
+text-decoration: none; /* Removes underline from link */
+}
+.card-link:hover {
+text-decoration: underline;
+}
+
+/* Shop All Link */
+.shop-all {
+display: inline-block;
+font-size: 1.125rem;
+color: #333;
+font-weight: bold;
+text-decoration: none;
+margin-top: 20px;
+transition: color 0.3s ease;
+}
+
+.shop-all:hover {
+color: #d82a29;
+text-decoration: underline;
+}
+
+
+.image-gallery {
+padding: 40px 0;
+background-color: #f9f9f9; /* Background color similar to Maybelline's site */
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+gap: 20px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.image-card {
+overflow: hidden;
+}
+
+.gallery-img {
+width: 100%;
+height: auto;
+display: block;
+transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+}
+
+.image-card:hover .gallery-img {
+transform: scale(1.05); /* Slight zoom-in on hover */
+}
+/* Cart container */
+.cart {
+position: fixed;
+top: 0;
+right: -380px; /* Initially hide the cart off-screen */
+width: 380px;
+max-height: 100vh; /* Set a maximum height for the cart */
+padding: 20px;
+background-color: #ffffff;
+transition: right 0s cubic-bezier(0.075, 0.82, 0.165, 1);
+z-index: 1000; /* Ensure the cart is above other elements */
+overflow-y: auto; /* Add vertical scroll */
+}
+
+/* Cart active state */
+.cart.active {
+right: 0; /* Move the cart into view when active */
+}
+
+/* Media query for phones */
+@media screen and (max-width: 600px) {
+.cart {
+    right: -100%; /* Initially hide the cart off-screen */
+    width: 100%;
+    max-height: 100vh; /* Set a maximum height for the cart */
+    overflow-y: auto; /* Add vertical scroll */
+
+}
+
+.cart.active {
+    left: 0; /* Move the cart into view when active */
+}
+}
+
+
+
+/* Cart title */
+.cart-title {
+text-align: center;
+font-weight: 600;
+margin-top: 2rem;
+font-size: 1.5rem;
+color: black;
+}
+
+/* Cart total */
+.total {
+display: flex;
+justify-content: flex-end;
+margin-top: 1.5rem;
+border-top: 9px solid rgb(7, 4, 0);
+}
+
+/* Cart total title */
+.total-title {
+font-size: 1.9rem;
+font-weight: 758;
+margin-top: 1rem;
+margin-right: .6rem;
+
+}
+
+/* Cart total price */
+.total-price {
+font-size: 1.8rem;
+margin: 1rem 0 0 0.7rem;
+color: black;
+font-weight: 550;
+
+}
+/* Delivery options container */
+.delivery-options {
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+margin-top: .9rem;
+}
+
+/* Individual delivery option */
+.delivery-option {
+font-size: 1.5rem;
+margin-top: 0rem;
+padding: 0.5rem 0;
+}
+
+/* Divider line between delivery options */
+.delivery-divider {
+width: 100%;
+border-top: 1.9px solid #000000;
+margin: 0rem 0;
+}
+
+
+
+/* Style for Express Delivery */
+.delivery-option.express {
+color: rgb(0, 0, 0);
+font-weight: 549;
+}
+
+/* Buy button */
+.btn-buy {
+display: flex;
+justify-content: center;
+margin: 1.5rem auto 0 auto;
+padding: 12px 20px;
+width: 96%;
+text-align: center;
+border: none;
+border-radius: 2rem;
+background-color: rgb(21, 26, 26);
+color: #ffffff;
+font-size: 1rem;
+font-style: italic;
+font-weight: 500;
+cursor: pointer;
+}
+
+/* Close cart button */
+#close-cart {
+position: absolute;
+top: 1rem;
+right: 0.8rem;
+font-size: 2rem;
+color: rgb(20, 26, 26);
+cursor: pointer;
+}
+
+/* Cart box */
+.cart-box {
+display: grid;
+grid-template-columns: 32% 50% 18%;
+align-items: center;
+gap: 1rem;
+margin-top: 1rem;
+}
+
+/* Cart image */
+.cart-img {
+width: 100px;
+height: 100px;
+object-fit: contain;
+padding: 10px;
+object-position: center;
+}
+
+/* Detail box */
+.detail-box {
+display: grid;
+row-gap: 0.5rem;
+outline: black;
+}
+
+/* Product title */
+.product-title {
+font-size: .700rem;
+font-weight: 500;
+text-transform: lowercase;
+}
+
+/* Product price */
+.product-price {
+font-weight: 500;
+margin-top: 20px;
+}
+
+/* Trash icon */
+.trash-icon {
+font-size: 24px;
+color: rgb(21, 29, 29);
+cursor: pointer;
+margin-left: 100%;
+}
+
+/* Cart dropdown */
+.cart-dropdown {
+display: none;
+/* Additional styling */
+}
+
+.cart-dropdown.show {
+display: block;
+}
+
+/* Media query for phones */
+@media screen and (max-width: 600px) {
+.cart {
+    right: -100%; /* Initially hide the cart off-screen */
+    width: 100%;
+    overflow-y: auto; /* Add vertical scroll */
+}
+.cart-icon {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px; /* Adjust as needed */
+  margin-bottom: 50px;
+  }
+  
+.cart.active {
+    right: 0; /* Move the cart into view when active */
+}
+}
+/* Default styles */
+.cart-icon {
+position: relative;
+display: inline-block;
+margin-right: 10px; /* Adjust as needed */
+}
+
+.cart-icon i {
+font-size: 24px; /* Adjust as needed */
+}
+
+.cart-count {
+position: absolute;
+top: -8px; /* Adjust as needed */
+right: -8px; /* Adjust as needed */
+background-color: red;
+color: white;
+font-size: 12px; /* Adjust as needed */
+padding: 2px 5px;
+border-radius: 50%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+.cart-icon i {
+  font-size: 25px; /* Adjust as needed for smaller screens */
+  color: light;
+  color: #ccc;
+}
+
+.cart-count {
+  top: -6px; /* Adjust as needed for smaller screens */
+  right: -6px; /* Adjust as needed for smaller screens */
+  font-size: 10px; /* Adjust as needed for smaller screens */
+  padding: 1px 3px;
+  background-color: blue;
+}
+}
+/* General Styles */
+ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+li {
+position: relative;
+}
+
+a {
+display: block;
+padding: 10px 15px;
+text-decoration: none;
+color: #333; /* Default text color */
+}
+
+a:hover {
+background-color: #f0f0f0; /* Hover effect */
+}
+
+/* Dropdown Styles */
+.dropdown {
+display: none; /* Hide by default */
+position: absolute;
+left: 0;
+top: 100%; /* Position it below the parent */
+background: white; /* Background color */
+border: 1px solid #ccc; /* Optional border */
+z-index: 1000; /* Ensure it appears above other elements */
+width: 200px; /* Fixed width for dropdown */
+}
+
+li:hover .dropdown {
+display: block; /* Show on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+a {
+    padding: 15px; /* Increased padding for touch targets */
+    font-size: 16px; /* Larger font size */
+}
+
+.dropdown {
+    width: 100%; /* Full width on mobile */
+    left: 0; /* Align with the parent */
+}
+}
+
+/* Desktop Styles */
+@media (min-width: 601px) {
+ul {
+    display: flex; /* Flex layout for desktop */
+}
+
+li {
+    margin-right: 20px; /* Spacing between items */
+}
+
+.dropdown {
+    width: 200px; /* Fixed width on desktop */
+}
+}

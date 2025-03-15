@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Store</title>
+  <link rel="stylesheet" href="style/styles.css">
+  <link rel="stylesheet" href="faqs.css">
+  <link rel="stylesheet" href="shopss.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <input type="checkbox" id="check">
+      <label class="checkbtn" for="check">
+        <i class="fas fa-bars"></i>
+      </label>
+      <!-- Cart icon -->
+      <div class="cart-icon" id="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </div>
+  
+      <!-- Cart dropdown content -->
+      <div id="dropdown-cart" class="cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <!-- Content -->
+        <div class="cart-content">
+          <div class="cart-box">
+            <div class="detail-box">
+              <div class="product-price"></div>
+              <div>
+                <!-- Remove item -->
+                <i id="trash-icon" class="fas fa-trash-alt trash-icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Total -->
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">$0</div>
+        </div>
+        <button type="button" class="btn-buy">Buy</button>
+        <i id="close-cart" class="fas fa-times"></i>
+      </div>
+  
+      <label class="logo"></label>
+      <ul>
+        <li><a class="active" href="index.html">Crave Crunch</a></li>
+        <li><a href="CraveCrunchSnacks.html">Snack Time Favorites</a></li>
+        <li><a href="cravecrunchpantrystaples.html">Pantry Staples</a></li>
+        <li><a href="CraveCrunchContact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </body>
+  
+
+  <section class="faq">
+    <h2></h2>
+    <div class="faq-item">
+      <h3 class="question">Ever notice how a bag of Lay's chips seems half-empty? It's actually to prevent breakage and ensure you get the crispiest chips!</h3>
+      <p class="answer">The "half-empty" appearance of a bag of Lay's chips is intentional. The extra space helps prevent the chips from getting crushed during shipping and handling, ensuring that you get the crispiest chips possible!</p>
+      <img src="es3.jpg" alt="Lay's Chips">
+    </div>
+    <div class="faq-item">
+      <h3 class="question">Did you know that Lay's created a flavor contest where people could suggest new chip flavors? The winner in 2013 was 'Cheesy Garlic Bread'! If you could create a new Lay's chip flavor, what would it be?</h3>
+      <p class="answer">If I could create a new Lay's chip flavor, it would be "Spicy Korean BBQ." The chips would be tangy, sweet, and spicy, with flavors reminiscent of gochujang-marinated grilled meat. What about you? What flavor would you create?</p>
+      <img src="es2.jpg" alt="Lay's Chips">
+    </div>
+    <div class="faq-item">
+      <h3 class="question">Did you know that Lay's once created a limited-edition 'wasabi ginger' flavor inspired by Japanese cuisine? If you could invent a unique chip flavor inspired by another culture's cuisine, what would it be?"
+
+
+      </h3>
+      <p class="answer">
+        If I could invent a unique chip flavor inspired by another culture's cuisine, I would create "Tandoori Masala." It would be a flavorful blend of spices like cumin, coriander, turmeric, and garam masala, inspired by the vibrant flavors of Indian tandoori dishes.
+        
+        
+        
+        
+        </p>
+        <img src="fff5.jpg" alt="Lay's Chips">
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Explore our <a href="#">About Us</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ol class="footer-quick-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ol>
+      </div>
+      <div class="footer-section">
+        <h3>Support</h3>
+        <ol class="footer-support-links">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ol>
+      </div>
+      <div class="footer-section">
+        <h3></h3>
+        <ol class="payment-icons">
+          <li><i class="fab fa-cc-visa" style="color: #1a1aff;"></i></li>
+          <li><i class="fab fa-cc-mastercard" style="color: #ff8000;"></i></li>
+          <li><i class="fab fa-cc-paypal" style="color: #003366;"></i></li>
+          <li><i class="fab fa-cc-amex" style="color: #33cc33;"></i></li>
+        </ol>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <p class="powered-by-shopify">2024, Powered by Shopify</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    // JavaScript to toggle the visibility of answers when questions are clicked
+    $(document).ready(function () {
+      $('.question').click(function () {
+        $(this).next('.answer').slideToggle();
+      });
+    });
+  </script>
+  <script src="scripts.js"></script>
+</body>
+
+</html>

